@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎟️ Registration Form ✨</title>
+  <script src="script.js" defer></script>
+  <style>
+    /* 🎨 Background gradient */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #c3d9ff, #a8edea);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* 🧾 Form container */
+    .container {
+      background-color: #ffffff;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a3aff;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* 🟦 Input and Select fields (same size) */
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      appearance: none; /* Makes dropdown arrow cleaner */
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4a3aff;
+      box-shadow: 0 0 6px rgba(74, 58, 255, 0.3);
+    }
+
+    /* 🧩 Align dropdown arrows properly */
+    select {
+      background-color: #fff;
+      background-position: right 12px center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 10px 25px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button[type="submit"] {
+      background-color: #4860e9;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #65b34f;
+    }
+
+    button[type="reset"] {
+      background-color: #d81616;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #0bdbd4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="register.php" method="POST" onsubmit="return validateForm()">
+      <h2>✨ Registration Form ✨</h2>
+
+      <label for="name">🙍‍♀️ Name:</label>
+      <input type="text" name="name" id="name" placeholder="Please enter your name" required>
+
+      <label for="email">📧 Email:</label>
+      <input type="email" name="email" id="email" placeholder="Please enter your email" required>
+
+      <label for="password">🔒 Password:</label>
+      <input type="password" name="password" id="password" placeholder="Create a password" required>
+
+      <label for="confirm_password">🔑 Confirm Password:</label>
+      <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-enter your password" required>
+
+      <label for="gender">🚻 Gender:</label>
+      <select name="gender" id="gender" required>
+        <option value="">Select your gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="dob">🎂 Date of Birth:</label>
+      <input type="date" name="dob" id="dob" required>
+
+      <label for="show_name">🎭 Show Name:</label>
+      <select name="show_name" id="show_name" required>
+        <option value="">Select a Show Name</option>
+        <option value="The Starlight Circus">The Starlight Circus</option>
+        <option value="The Beat Odyssey">The Beat Odyssey</option>
+        <option value="Wacky Wonder Wheel">Wacky Wonder Wheel</option>
+        <option value="Comedy Hour">Comedy Hour</option>
+      </select>
+
+      <label for="ticket_type">🎟️ Ticket Type:</label>
+      <select name="ticket_type" id="ticket_type" required>
+        <option value="">Select ticket type</option>
+        <option value="VIP">VIP</option>
+        <option value="General">General</option>
+        <option value="Student">Student</option>
+        <option value="Senior citizen">Senior citizen</option>
+      </select>
+
+      <div class="buttons">
+        <button type="submit">✅ Submit</button>
+        <button type="reset">🔄 Reset</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
